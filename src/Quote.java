@@ -1,14 +1,14 @@
 
 public class Quote {
 
-    private String qu;
+    private String quote;   //Quote by a politiction
 
     public Quote(String q, String s, String s2, String s3){
-        qu = q;
+        quote = q;
     }
 
     public String getQuote(){
-        return qu;
+        return quote;
     }
 
 }
