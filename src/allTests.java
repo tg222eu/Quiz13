@@ -19,4 +19,9 @@ public class allTests {
         assertEquals(q.getPerson(2), "An another person who did not quote");
     }
 
+    @Test
+    public void shouldGetThePersonWhoQuoted(){
+        Quote q = new Quote("", "Person who told the quote", "A person who did not quote", "An another person who did not quote");
+        assertEquals(q.getPersonWhoQuoted(), "Person who told the quote");
+    }
 }
