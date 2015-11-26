@@ -44,8 +44,18 @@ public class allTests {
     //**********************VIEW TEST********************************
     @Test
     public void shouldPrintWelcomeScreen(){
-        View v = new View();
+        Questions que = new Questions();
+        View v = new View(que);
         assertEquals(true, v.printWelcome());
         assertEquals(false, v.printWelcome());
+    }
+
+    @Test
+    public String shouldGetQuestionAndPossibleAnswers(){
+        Quote q = new Quote("Vem sa detta?", "176-617", "176-716", "176-167");
+        Questions que = new Questions();
+        que.addQuoteObject(q);
+        View v = new View(que);
+        assertEquals(v.getQuestionString(1), "Vem sa detta?\n1. 176-617\n2. 176-716\n3. 176-167");
     }
 }

@@ -1,10 +1,11 @@
 
 public class View {
 
-    boolean welcome = true;
+    public boolean welcome = true;
+    public Questions questions;
 
-    public View(){
-
+    public View(Questions q){
+        questions = q;
     }
 
     public boolean printWelcome(){
