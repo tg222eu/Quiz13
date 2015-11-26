@@ -17,4 +17,9 @@ public class View {
         return welcome;
     }
 
+    public String getQuestionString(int i){
+        return questions.getQuoteObject(i).getQuote() + "\n1. " + questions.getQuoteObject(i).getPerson(0) + "\n2. " +
+                questions.getQuoteObject(i).getPerson(1) + "\n3. " + questions.getQuoteObject(i).getPerson(2);
+    }
+
 }

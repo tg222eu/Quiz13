@@ -51,11 +51,11 @@ public class allTests {
     }
 
     @Test
-    public String shouldGetQuestionAndPossibleAnswers(){
+    public void shouldGetQuestionAndPossibleAnswers(){
         Quote q = new Quote("Vem sa detta?", "176-617", "176-716", "176-167");
         Questions que = new Questions();
         que.addQuoteObject(q);
         View v = new View(que);
-        assertEquals(v.getQuestionString(1), "Vem sa detta?\n1. 176-617\n2. 176-716\n3. 176-167");
+        assertEquals(v.getQuestionString(0), "Vem sa detta?\n1. 176-617\n2. 176-716\n3. 176-167");
     }
 }
