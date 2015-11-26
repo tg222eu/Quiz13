@@ -56,6 +56,6 @@ public class allTests {
         Questions que = new Questions();
         que.addQuoteObject(q);
         View v = new View(que);
-        assertEquals(v.getQuestionString(0), "Vem sa detta?\n1. 176-617\n2. 176-716\n3. 176-167");
+        assertEquals(v.getQuestionString(0), "Vem sa detta?\n1. 176-617\n2. 176-716\n3. 176-167\nVälj alternativen '1', '2', '3'");
     }
 }
