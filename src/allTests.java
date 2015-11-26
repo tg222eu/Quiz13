@@ -31,14 +31,14 @@ public class allTests {
     @Test
     public void storeQuotesInQuestionList(){
         Questions q = new Questions();
-        Questions().addQuote(new Quote("Quote", "Knatte", "Fnatte", "Tjatte"));
-        Questions().addQuote(new Quote("Quote2", "Knatte2", "Fnatte2", "Tjatte2"));
-        Questions().addQuote(new Quote("Quote3", "Knatte3", "Fnatte3", "Tjatte3"));
-        assertEquals(Questions.getQuoteObject(0).getPerson(0), "Knatte");
-        assertEquals(Questions.getQuoteObject(1).getPerson(1), "Fnatte2");
-        assertEquals(Questions.getQuoteObject(2).getPerson(2), "Tjatte3");
-        assertEquals(Questions.getQuoteObject(0).getQuote(), "Quote");
-        assertEquals(Questions.getQuoteObject(1).getQuote(), "Quote2");
-        assertEquals(Questions.getQuoteObject(2).getQuote(), "Quote3");
+        q.addQuoteObject(new Quote("Quote", "Knatte", "Fnatte", "Tjatte"));
+        q.addQuoteObject(new Quote("Quote2", "Knatte2", "Fnatte2", "Tjatte2"));
+        q.addQuoteObject(new Quote("Quote3", "Knatte3", "Fnatte3", "Tjatte3"));
+        assertEquals(q.getQuoteObject(0).getPerson(0), "Knatte");
+        assertEquals(q.getQuoteObject(1).getPerson(1), "Fnatte2");
+        assertEquals(q.getQuoteObject(2).getPerson(2), "Tjatte3");
+        assertEquals(q.getQuoteObject(0).getQuote(), "Quote");
+        assertEquals(q.getQuoteObject(1).getQuote(), "Quote2");
+        assertEquals(q.getQuoteObject(2).getQuote(), "Quote3");
     }
 }
