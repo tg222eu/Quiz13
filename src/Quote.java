@@ -2,8 +2,8 @@
 public class Quote {
 
     private String quote;   //Quote by a politiction
-    private String[] list = new String[3];
-    private String personWhoQuoted;
+    private String[] list = new String[3]; // Only three possible answer allowed
+    private String personWhoQuoted;     // The right answer who quoted that you get score for
 
     public Quote(String q, String s, String s2, String s3){
         quote = q;

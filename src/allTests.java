@@ -41,4 +41,11 @@ public class allTests {
         assertEquals(q.getQuoteObject(1).getQuote(), "Quote2");
         assertEquals(q.getQuoteObject(2).getQuote(), "Quote3");
     }
+    //**********************VIEW TEST********************************
+    @Test
+    public void shouldPrintWelcomeScreen(){
+        View v = new View();
+        assertEquals(true, v.printWelcome());
+        assertEquals(false, v.printWelcome());
+    }
 }
