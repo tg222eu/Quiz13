@@ -22,4 +22,7 @@ public class View {
                 questions.getQuoteObject(i).getPerson(1) + "\n3. " + questions.getQuoteObject(i).getPerson(2) +
                 "\nVälj alternativen '1', '2', '3'";
     }
+    public String getAlternative(int i, int q){
+        return questions.getQuoteObject(q).getPerson(i);
+    }
 }
