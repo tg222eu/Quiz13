@@ -25,4 +25,7 @@ public class View {
     public String getAlternative(int i, int q){
         return questions.getQuoteObject(q).getPerson(i);
     }
+    public Questions getQuestions(){
+        return questions;
+    }
 }
