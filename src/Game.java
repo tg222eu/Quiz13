@@ -18,27 +18,37 @@ public class Game {
     public void askInputThenGetAlternativesAndCalculateScore(){
         try{
             while(systemRunning){
+                view.printWelcome();
+                System.out.println("Vem sa det? '1', '2', '3', 'q'(quit)");
                 int input = System.in.read();
 
-                System.out.println("Vem sa det? '1', '2', '3', 'q'(quit)");
                 if (input == '1') {
                     answerGuess = view.getAlternative(0, questionCounter);
                 } else if (input == '2') {
                     answerGuess = view.getAlternative(1, questionCounter);
                 } else if (input == '3') {
                     answerGuess = view.getAlternative(2, questionCounter);
+                }else if(input == 'q'){
+                    systemRunning = false;
+                }else{
+                    System.out.println("Wrong input. Try again");
+                    questionCounter--;
                 }
                 if (answerGuess == view.getQuestions().getQuoteObject(questionCounter).getPersonWhoQuoted()) {
                     score++;
                 }
 
-                if(input == 'q'){
+                if(allQuestionsAnswered()){
+                    questionCounter++;
+                }else{
                     systemRunning = false;
                 }
             }
         }catch(Exception e){
             System.out.println("Somthing when apeshit with input");
         }
-
+    }
+    public boolean allQuestionsAnswered(){
+        return view.getQuestions().quoteList.size() < questionCounter;
     }
 }
