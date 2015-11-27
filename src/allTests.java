@@ -1,8 +1,10 @@
 import static org.junit.Assert.assertEquals;
 
 import org.mockito.Mockito;
-import org.mockito.Mockito.*;
+import static org.mockito.Mockito.*;
 import org.junit.Test;
+
+import java.util.List;
 
 public class allTests {
 
@@ -76,12 +78,20 @@ public class allTests {
         View v = new View(q);
         assertEquals("Quote",v.getQuestions().getQuoteObject(0).getQuote());
     }
-    //***********************GAME TEST***********************
-    /*
+        //***********************GAME TEST***********************
+        @Test
+        public void shouldPrintMessageAndStoreAlternativeFromUserAndCalculateScore () {
+            Game mockedGame = mock(Game.class);
+            mockedGame.askInputThenGetAlternativesAndCalculateScore();
+            verify(mockedGame).askInputThenGetAlternativesAndCalculateScore();
+        }
+
     @Test
-    public void shouldPrintMessageAndStoreAlternativeFromUserAndCalculateScore(){
-        Game game = Mockito.mock(Game.class);
-        Mockito.verify( game ).askInputThenGetAlternativesAndCalculateScore();
+    public void shouldReturnFalseIfAllQuestionsAreAnswered(){
+
+        View mockedView = mock(View.class);
+        when(mockedView.getQuestions().quoteList.size()).thenReturn(3);
+        Game g = new Game(mockedView);
+        assertEquals(true, g.hasAllQuestionsAnswered());
     }
-    */
 }

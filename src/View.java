@@ -2,7 +2,7 @@
 public class View {
 
     public boolean welcome = true;
-    public Questions questions;
+    private Questions questions;
 
     public View(Questions q){
         questions = q;
