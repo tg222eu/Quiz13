@@ -1,4 +1,6 @@
 import static org.junit.Assert.assertEquals;
+
+import org.mockito.Mockito;
 import org.mockito.Mockito.*;
 import org.junit.Test;
 
@@ -58,4 +60,11 @@ public class allTests {
         View v = new View(que);
         assertEquals(v.getQuestionString(0), "Vem sa detta?\n1. 176-617\n2. 176-716\n3. 176-167\nVälj alternativen '1', '2', '3'");
     }
+    //***********************GAME TEST***********************
+    @Test
+    public void shouldPrintMessageAndStoreAlternativeFromUserAndCalculateScore(){
+        Game game = Mockito.mock(Game.class);
+        Mockito.verify( game ).askInputThenGetAlternativesAndCalculateScore();
+    }
+
 }
