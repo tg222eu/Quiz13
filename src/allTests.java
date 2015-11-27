@@ -69,6 +69,13 @@ public class allTests {
         assertEquals("Person2",v.getAlternative(1, 0));
         assertEquals("Person3",v.getAlternative(2, 0));
     }
+    @Test
+    public void shouldGetQuoteObjectQuoteString(){
+        Questions q = new Questions();
+        q.addQuoteObject(new Quote("Quote", "Person1", "Person2", "Person3"));
+        View v = new View(q);
+        assertEquals("Quote",v.getQuestion().getQuoteObject(0).getQuote());
+    }
     //***********************GAME TEST***********************
     /*
     @Test
